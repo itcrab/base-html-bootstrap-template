@@ -1,0 +1,26 @@
+{
+  "name": "base-html-bootstrap-template",
+  "version": "1.0.0",
+  "description": "Base HTML5 Bootstrap template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itcrab/base-html-bootstrap-template.git"
+  },
+  "keywords": [
+    "html5",
+    "bootstrap"
+  ],
+  "author": "Arcady Usov <itcrab@ya.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itcrab/base-html-bootstrap-template/issues"
+  },
+  "homepage": "https://github.com/itcrab/base-html-bootstrap-template",
+  "dependencies": {
+    "bower": "^1.3.12"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "base-html-bootstrap-template",
+  "version": "1.0.0",
+  "homepage": "https://github.com/itcrab/base-html-bootstrap-template",
+  "authors": [
+    "Arcady Usov <itcrab@ya.ru>"
+  ],
+  "description": "Base HTML5 Bootstrap template",
+  "keywords": [
+    "html5",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.2",
+    "jquery-migrate": "~1.2.1",
+    "bootstrap": "~3.3.2",
+    "html5shiv": "~3.7.2",
+    "respond": "~1.4.2"
+  }
+}
