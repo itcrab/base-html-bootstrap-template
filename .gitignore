@@ -7,3 +7,7 @@ node_modules
 
 ### Bower template
 bower_components/
+
+# Minification CSS&JS
+css/min/
+js/min/
