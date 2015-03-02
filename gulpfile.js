@@ -1,7 +1,9 @@
 var gulp       = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     concat     = require('gulp-concat'),
-    watch      = require('gulp-watch');
+    watch      = require('gulp-watch'),
+    minifyCSS  = require('gulp-minify-css'),
+    uglify     = require('gulp-uglify');
 
 // CSS
 gulp.task('css', function () {
@@ -9,6 +11,7 @@ gulp.task('css', function () {
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css'
         ])
+        .pipe(minifyCSS())
         .pipe(sourcemaps.init())
         .pipe(concat('all.min.css'))
         .pipe(sourcemaps.write('./'))
@@ -23,6 +26,7 @@ gulp.task('js', function () {
         './bower_components/bootstrap/dist/js/bootstrap.min.js',
         './js/main.js'
         ])
+        .pipe(uglify())
         .pipe(sourcemaps.init())
         .pipe(concat('all.min.js'))
         .pipe(sourcemaps.write('./'))
@@ -35,6 +39,7 @@ gulp.task('js-ie', function () {
         './bower_components/html5shiv/dist/html5shiv.min.js',
         './bower_components/respond/dest/respond.min.js'
         ])
+        .pipe(uglify())
         .pipe(sourcemaps.init())
         .pipe(concat('all.ie.min.js'))
         .pipe(sourcemaps.write('./'))
