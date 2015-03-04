@@ -12,7 +12,7 @@ gulp.task('css', function () {
     return gulp.src([
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
-        './stylus/main.css'
+        './stylus/stylus_main.css'
         ])
         .pipe(minifyCSS())
         .pipe(sourcemaps.init())
