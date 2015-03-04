@@ -3,13 +3,16 @@ var gulp       = require('gulp'),
     concat     = require('gulp-concat'),
     watch      = require('gulp-watch'),
     minifyCSS  = require('gulp-minify-css'),
-    uglify     = require('gulp-uglify');
+    uglify     = require('gulp-uglify'),
+    stylus     = require('gulp-stylus'),
+    nib        = require('nib');
 
 // CSS
 gulp.task('css', function () {
     return gulp.src([
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
-        './css/main.css'
+        './css/main.css',
+        './stylus/main.css'
         ])
         .pipe(minifyCSS())
         .pipe(sourcemaps.init())
@@ -46,20 +49,32 @@ gulp.task('js-ie', function () {
         .pipe(gulp.dest('./js/min'));
 });
 
+// Stylus
+gulp.task('stylus', function () {
+    gulp.src('./stylus/**/*.styl')
+        .pipe(stylus({
+            use: nib()
+        }))
+        .pipe(gulp.dest('./stylus'));
+});
+
 // Watcher
 gulp.task('watch', function () {
     gulp.watch([
         './bower_components/**/*.css',
-        './css/main.css'
+        './css/**/*.css'
         ], ['css']);
     gulp.watch([
         './bower_components/**/*.js',
-        './js/main.js'
+        './js/**/*.js'
         ], ['js', 'js-ie']);
+    gulp.watch([
+        './stylus/**/*.styl'
+        ], ['stylus', 'css']);
 });
 
 // Compile
-gulp.task('compile', ['css', 'js', 'js-ie']);
+gulp.task('compile', ['stylus', 'css', 'js', 'js-ie']);
 
 // default
 gulp.task('default', ['watch']);

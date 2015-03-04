@@ -11,3 +11,6 @@ bower_components/
 # Minification CSS&JS
 css/min/
 js/min/
+
+# Stylus
+stylus/*.css
