@@ -1,11 +1,12 @@
-var gulp       = require('gulp'),
-    sourcemaps = require('gulp-sourcemaps'),
-    concat     = require('gulp-concat'),
-    watch      = require('gulp-watch'),
-    minifyCSS  = require('gulp-minify-css'),
-    uglify     = require('gulp-uglify'),
-    stylus     = require('gulp-stylus'),
-    nib        = require('nib');
+var gulp         = require('gulp'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    concat       = require('gulp-concat'),
+    watch        = require('gulp-watch'),
+    minifyCSS    = require('gulp-minify-css'),
+    uglify       = require('gulp-uglify'),
+    stylus       = require('gulp-stylus'),
+    nib          = require('nib'),
+    autoprefixer = require('gulp-autoprefixer');
 
 // CSS
 gulp.task('css', function () {
@@ -14,6 +15,11 @@ gulp.task('css', function () {
         './css/main.css',
         './stylus/stylus_main.css'
         ])
+        .pipe(autoprefixer({
+            browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Explorer 8', 'ie >= 8'],
+            cascade: false,
+            remove: false
+        }))
         .pipe(minifyCSS())
         .pipe(sourcemaps.init())
         .pipe(concat('all.min.css'))
