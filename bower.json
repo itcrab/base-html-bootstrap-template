@@ -20,10 +20,10 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.11.2",
-    "jquery-migrate": "~1.2.1",
-    "bootstrap": "~3.3.4",
-    "html5shiv": "~3.7.2",
-    "respond": "~1.4.2"
+    "jquery": "1.11.3",
+    "jquery-migrate": "1.2.1",
+    "bootstrap": "3.3.4",
+    "html5shiv": "3.7.2",
+    "respond": "1.4.2"
   }
 }
