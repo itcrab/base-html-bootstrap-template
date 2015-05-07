@@ -6,6 +6,7 @@ var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
     stylus       = require('gulp-stylus'),
     nib          = require('nib'),
+	less         = require('gulp-less'),
     autoprefixer = require('gulp-autoprefixer');
 
 // CSS
@@ -13,7 +14,8 @@ gulp.task('css', function () {
     return gulp.src([
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
-        './stylus/stylus_main.css'
+        './stylus/stylus_main.css',
+	    './less/less_main.css'
         ])
         .pipe(autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Explorer 8', 'ie >= 8'],
@@ -64,6 +66,13 @@ gulp.task('stylus', function () {
         .pipe(gulp.dest('./stylus'));
 });
 
+// Less
+gulp.task('less', function () {
+	gulp.src('./less/**/*.less')
+		.pipe(less())
+		.pipe(gulp.dest('./less'));
+});
+
 // Watcher
 gulp.task('watch', function () {
     gulp.watch([
@@ -77,10 +86,13 @@ gulp.task('watch', function () {
     gulp.watch([
         './stylus/**/*.styl'
         ], ['stylus', 'css']);
+	gulp.watch([
+		'./less/**/*.less'
+	], ['less', 'css']);
 });
 
 // Compile
-gulp.task('compile', ['stylus', 'css', 'js', 'js-ie']);
+gulp.task('compile', ['stylus', 'less', 'css', 'js', 'js-ie']);
 
 // default
 gulp.task('default', ['watch']);
