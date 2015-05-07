@@ -20,3 +20,7 @@ less/*.css
 
 # Sass
 sass/*.css
+
+# Coffee
+coffee/*.js
+coffee/*.map
