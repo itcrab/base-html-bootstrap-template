@@ -24,3 +24,6 @@ sass/*.css
 # Coffee
 coffee/*.js
 coffee/*.map
+
+# Jade
+jade_index.html

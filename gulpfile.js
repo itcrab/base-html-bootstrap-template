@@ -10,7 +10,8 @@ var gulp         = require('gulp'),
 	sass         = require('gulp-sass'),
 	coffee       = require('gulp-coffee'),
 	gutil        = require('gulp-util'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+	jade         = require('gulp-jade');
 
 // CSS
 gulp.task('css', function () {
@@ -95,6 +96,13 @@ gulp.task('coffee', function () {
 		.pipe(gulp.dest('./coffee'));
 });
 
+// Jade
+gulp.task('jade', function () {
+	gulp.src('./*.jade')
+		.pipe(jade())
+		.pipe(gulp.dest('./'));
+});
+
 // Watcher
 gulp.task('watch', function () {
     gulp.watch([
@@ -118,10 +126,13 @@ gulp.task('watch', function () {
 	gulp.watch([
 		'./coffee/**/*.coffee'
 	], ['coffee', 'js']);
+	gulp.watch([
+		'./*.jade'
+	], ['jade']);
 });
 
 // Compile
-gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'js-ie']);
+gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'js-ie', 'jade']);
 
 // default
 gulp.task('default', ['watch']);
