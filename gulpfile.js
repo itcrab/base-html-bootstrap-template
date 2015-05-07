@@ -7,6 +7,7 @@ var gulp         = require('gulp'),
     stylus       = require('gulp-stylus'),
     nib          = require('nib'),
 	less         = require('gulp-less'),
+	sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer');
 
 // CSS
@@ -15,7 +16,8 @@ gulp.task('css', function () {
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
         './stylus/stylus_main.css',
-	    './less/less_main.css'
+	    './less/less_main.css',
+	    './sass/sass_main.css'
         ])
         .pipe(autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Explorer 8', 'ie >= 8'],
@@ -73,6 +75,16 @@ gulp.task('less', function () {
 		.pipe(gulp.dest('./less'));
 });
 
+// Sass
+gulp.task('sass', function () {
+	gulp.src('./sass/**/*.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(gulp.dest('./sass'));
+	gulp.src('./sass/**/*.sass')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(gulp.dest('./sass'));
+});
+
 // Watcher
 gulp.task('watch', function () {
     gulp.watch([
@@ -89,10 +101,14 @@ gulp.task('watch', function () {
 	gulp.watch([
 		'./less/**/*.less'
 	], ['less', 'css']);
+	gulp.watch([
+		'./sass/**/*.scss',
+		'./sass/**/*.sass'
+	], ['sass', 'css']);
 });
 
 // Compile
-gulp.task('compile', ['stylus', 'less', 'css', 'js', 'js-ie']);
+gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'js', 'js-ie']);
 
 // default
 gulp.task('default', ['watch']);

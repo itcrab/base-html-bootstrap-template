@@ -17,3 +17,6 @@ stylus/*.css
 
 # Less
 less/*.css
+
+# Sass
+sass/*.css
