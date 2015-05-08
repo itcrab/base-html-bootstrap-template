@@ -113,17 +113,17 @@ gulp.task('watch', function () {
         './js/**/*.js'
         ], ['js', 'js-ie']);
     gulp.watch([
-        './stylus/**/*.styl'
+        './css/stylus/**/*.styl'
         ], ['stylus', 'css']);
 	gulp.watch([
-		'./less/**/*.less'
+		'./css/less/**/*.less'
 	], ['less', 'css']);
 	gulp.watch([
-		'./sass/**/*.scss',
-		'./sass/**/*.sass'
+		'./css/scss/**/*.scss',
+		'./css/sass/**/*.sass'
 	], ['sass', 'css']);
 	gulp.watch([
-		'./coffee/**/*.coffee'
+		'./js/coffee/**/*.coffee'
 	], ['coffee', 'js']);
 	gulp.watch([
 		'./*.jade'
