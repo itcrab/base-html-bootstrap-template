@@ -1,1 +1,1 @@
-/* Main JS source */
+// Main JS source
