@@ -19,7 +19,7 @@ gulp.task('css', function () {
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
         './stylus/stylus_main.css',
-	    './less/less_main.css',
+	    './css/less/less_main.css',
 	    './sass/sass_main.css'
         ])
         .pipe(autoprefixer({
@@ -72,11 +72,11 @@ gulp.task('stylus', function () {
         .pipe(gulp.dest('./stylus'));
 });
 
-// Less
+// LESS
 gulp.task('less', function () {
-	gulp.src('./less/**/*.less')
+	gulp.src('./css/less/**/*.less')
 		.pipe(less())
-		.pipe(gulp.dest('./less'));
+		.pipe(gulp.dest('./css/less'));
 });
 
 // Sass

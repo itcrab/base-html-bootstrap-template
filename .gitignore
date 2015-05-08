@@ -15,8 +15,8 @@ js/min/
 # Stylus
 stylus/*.css
 
-# Less
-less/*.css
+# LESS
+css/less/*.css
 
 # Sass
 sass/*.css
