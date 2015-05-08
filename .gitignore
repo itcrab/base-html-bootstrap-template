@@ -27,4 +27,5 @@ js/coffee/*.js
 js/coffee/*.map
 
 # Jade
+html/jade/*.html
 jade_index.html
