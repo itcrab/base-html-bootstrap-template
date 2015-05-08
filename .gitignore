@@ -21,9 +21,9 @@ less/*.css
 # Sass
 sass/*.css
 
-# Coffee
-coffee/*.js
-coffee/*.map
+# CoffeeScript
+js/coffee/*.js
+js/coffee/*.map
 
 # Jade
 jade_index.html

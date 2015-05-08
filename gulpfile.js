@@ -41,7 +41,7 @@ gulp.task('js', function () {
         './bower_components/jquery-migrate/jquery-migrate.min.js',
         './bower_components/bootstrap/dist/js/bootstrap.min.js',
         './js/main.js',
-	    './coffee/coffee_main.js'
+	    './js/coffee/coffee_main.js'
         ])
         .pipe(uglify())
         .pipe(sourcemaps.init())
@@ -89,11 +89,11 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest('./sass'));
 });
 
-// Coffee
+// CoffeeScript
 gulp.task('coffee', function () {
-	gulp.src('./coffee/**/*.coffee')
+	gulp.src('./js/coffee/**/*.coffee')
 		.pipe(coffee({bare: true}).on('error', gutil.log))
-		.pipe(gulp.dest('./coffee'));
+		.pipe(gulp.dest('./js/coffee'));
 });
 
 // Jade
