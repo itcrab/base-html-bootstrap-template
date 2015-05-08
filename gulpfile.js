@@ -20,7 +20,8 @@ gulp.task('css', function () {
         './css/main.css',
         './stylus/stylus_main.css',
 	    './css/less/less_main.css',
-	    './sass/sass_main.css'
+	    './css/scss/scss_main.css',
+	    './css/sass/sass_main.css'
         ])
         .pipe(autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Explorer 8', 'ie >= 8'],
@@ -79,14 +80,14 @@ gulp.task('less', function () {
 		.pipe(gulp.dest('./css/less'));
 });
 
-// Sass
+// SASS
 gulp.task('sass', function () {
-	gulp.src('./sass/**/*.scss')
+	gulp.src('./css/scss/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./sass'));
-	gulp.src('./sass/**/*.sass')
+		.pipe(gulp.dest('./css/scss'));
+	gulp.src('./css/sass/**/*.sass')
 		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./sass'));
+		.pipe(gulp.dest('./css/sass'));
 });
 
 // CoffeeScript

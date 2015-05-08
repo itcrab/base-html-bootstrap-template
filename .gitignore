@@ -18,8 +18,9 @@ stylus/*.css
 # LESS
 css/less/*.css
 
-# Sass
-sass/*.css
+# SASS
+css/scss/*.css
+css/sass/*.css
 
 # CoffeeScript
 js/coffee/*.js
