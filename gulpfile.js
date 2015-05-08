@@ -18,7 +18,7 @@ gulp.task('css', function () {
     return gulp.src([
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
-        './stylus/stylus_main.css',
+        './css/stylus/stylus_main.css',
 	    './css/less/less_main.css',
 	    './css/scss/scss_main.css',
 	    './css/sass/sass_main.css'
@@ -66,11 +66,9 @@ gulp.task('js-ie', function () {
 
 // Stylus
 gulp.task('stylus', function () {
-    gulp.src('./stylus/**/*.styl')
-        .pipe(stylus({
-            use: nib()
-        }))
-        .pipe(gulp.dest('./stylus'));
+    gulp.src('./css/stylus/**/*.styl')
+        .pipe(stylus({use: nib()}))
+        .pipe(gulp.dest('./css/stylus'));
 });
 
 // LESS

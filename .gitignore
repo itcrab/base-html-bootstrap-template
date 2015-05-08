@@ -13,7 +13,7 @@ css/min/
 js/min/
 
 # Stylus
-stylus/*.css
+css/stylus/*.css
 
 # LESS
 css/less/*.css
