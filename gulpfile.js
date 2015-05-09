@@ -117,17 +117,17 @@ gulp.task('watch', function () {
         ], ['stylus', 'css']);
     gulp.watch([
         './css/less/**/*.less'
-    ], ['less', 'css']);
+        ], ['less', 'css']);
     gulp.watch([
         './css/scss/**/*.scss',
         './css/sass/**/*.sass'
-    ], ['sass', 'css']);
+        ], ['sass', 'css']);
     gulp.watch([
         './js/coffee/**/*.coffee'
-    ], ['coffee', 'js']);
+        ], ['coffee', 'js']);
     gulp.watch([
         './*.jade'
-    ], ['jade']);
+        ], ['jade']);
 });
 
 // Compile
