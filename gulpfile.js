@@ -15,7 +15,7 @@ var gulp         = require('gulp'),
 
 // CSS
 gulp.task('css', function () {
-    return gulp.src([
+    gulp.src([
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
         './css/stylus/stylus_main.css',
@@ -37,7 +37,7 @@ gulp.task('css', function () {
 
 // JS
 gulp.task('js', function () {
-    return gulp.src([
+    gulp.src([
         './bower_components/jquery/dist/jquery.min.js',
         './bower_components/jquery-migrate/jquery-migrate.min.js',
         './bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -53,7 +53,7 @@ gulp.task('js', function () {
 
 // JS for IE
 gulp.task('js-ie', function () {
-    return gulp.src([
+    gulp.src([
         './bower_components/html5shiv/dist/html5shiv.min.js',
         './bower_components/respond/dest/respond.min.js'
         ])
