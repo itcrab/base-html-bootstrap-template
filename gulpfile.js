@@ -6,12 +6,12 @@ var gulp         = require('gulp'),
     uglify       = require('gulp-uglify'),
     stylus       = require('gulp-stylus'),
     nib          = require('nib'),
-	less         = require('gulp-less'),
-	sass         = require('gulp-sass'),
-	coffee       = require('gulp-coffee'),
-	gutil        = require('gulp-util'),
+    less         = require('gulp-less'),
+    sass         = require('gulp-sass'),
+    coffee       = require('gulp-coffee'),
+    gutil        = require('gulp-util'),
     autoprefixer = require('gulp-autoprefixer'),
-	jade         = require('gulp-jade');
+    jade         = require('gulp-jade');
 
 // CSS
 gulp.task('css', function () {
@@ -19,9 +19,9 @@ gulp.task('css', function () {
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
         './css/stylus/stylus_main.css',
-	    './css/less/less_main.css',
-	    './css/scss/scss_main.css',
-	    './css/sass/sass_main.css'
+        './css/less/less_main.css',
+        './css/scss/scss_main.css',
+        './css/sass/sass_main.css'
         ])
         .pipe(autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Explorer 8', 'ie >= 8'],
@@ -42,7 +42,7 @@ gulp.task('js', function () {
         './bower_components/jquery-migrate/jquery-migrate.min.js',
         './bower_components/bootstrap/dist/js/bootstrap.min.js',
         './js/main.js',
-	    './js/coffee/coffee_main.js'
+        './js/coffee/coffee_main.js'
         ])
         .pipe(uglify())
         .pipe(sourcemaps.init())
@@ -73,33 +73,33 @@ gulp.task('stylus', function () {
 
 // LESS
 gulp.task('less', function () {
-	gulp.src('./css/less/**/*.less')
-		.pipe(less())
-		.pipe(gulp.dest('./css/less'));
+    gulp.src('./css/less/**/*.less')
+        .pipe(less())
+        .pipe(gulp.dest('./css/less'));
 });
 
 // SASS
 gulp.task('sass', function () {
-	gulp.src('./css/scss/**/*.scss')
-		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./css/scss'));
-	gulp.src('./css/sass/**/*.sass')
-		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./css/sass'));
+    gulp.src('./css/scss/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./css/scss'));
+    gulp.src('./css/sass/**/*.sass')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./css/sass'));
 });
 
 // CoffeeScript
 gulp.task('coffee', function () {
-	gulp.src('./js/coffee/**/*.coffee')
-		.pipe(coffee({bare: true}).on('error', gutil.log))
-		.pipe(gulp.dest('./js/coffee'));
+    gulp.src('./js/coffee/**/*.coffee')
+        .pipe(coffee({bare: true}).on('error', gutil.log))
+        .pipe(gulp.dest('./js/coffee'));
 });
 
 // Jade
 gulp.task('jade', function () {
-	gulp.src('./*.jade')
-		.pipe(jade())
-		.pipe(gulp.dest('./'));
+    gulp.src('./*.jade')
+        .pipe(jade())
+        .pipe(gulp.dest('./'));
 });
 
 // Watcher
@@ -115,19 +115,19 @@ gulp.task('watch', function () {
     gulp.watch([
         './css/stylus/**/*.styl'
         ], ['stylus', 'css']);
-	gulp.watch([
-		'./css/less/**/*.less'
-	], ['less', 'css']);
-	gulp.watch([
-		'./css/scss/**/*.scss',
-		'./css/sass/**/*.sass'
-	], ['sass', 'css']);
-	gulp.watch([
-		'./js/coffee/**/*.coffee'
-	], ['coffee', 'js']);
-	gulp.watch([
-		'./*.jade'
-	], ['jade']);
+    gulp.watch([
+        './css/less/**/*.less'
+    ], ['less', 'css']);
+    gulp.watch([
+        './css/scss/**/*.scss',
+        './css/sass/**/*.sass'
+    ], ['sass', 'css']);
+    gulp.watch([
+        './js/coffee/**/*.coffee'
+    ], ['coffee', 'js']);
+    gulp.watch([
+        './*.jade'
+    ], ['jade']);
 });
 
 // Compile
