@@ -29,3 +29,7 @@ js/coffee/*.map
 # Jade
 html/jade/*.html
 jade_index.html
+
+# Dist
+dist/*
+!dist/.gitkeep
