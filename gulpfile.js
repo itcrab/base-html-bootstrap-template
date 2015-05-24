@@ -13,7 +13,8 @@ var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     jade         = require('gulp-jade'),
     imagemin     = require('gulp-imagemin'),
-    pngquant     = require('imagemin-pngquant');
+    pngquant     = require('imagemin-pngquant'),
+    browserSync  = require('browser-sync');
 
 // CSS
 gulp.task('css', function () {
@@ -148,6 +149,20 @@ gulp.task('watch', function () {
         ], ['jade']);
 });
 
+// BrowserSync
+gulp.task('browser-sync', function () {
+    browserSync.init([
+        './dist/css/all.min.css',
+        './dist/js/all.ie.min.js',
+        './dist/js/all.min.js',
+        './dist/img/**/*',
+        './*.html'
+        ], {
+        server: {
+            baseDir: './'
+        }});
+});
+
 // Compile
 gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'js-ie', 'jade']);
 
@@ -155,4 +170,4 @@ gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'js-ie', 
 gulp.task('deploy', ['images']);
 
 // default
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'browser-sync']);
