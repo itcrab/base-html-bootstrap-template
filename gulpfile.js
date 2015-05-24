@@ -106,11 +106,16 @@ gulp.task('jade', function () {
 gulp.task('watch', function () {
     gulp.watch([
         './bower_components/**/*.css',
-        './css/**/*.css'
+        './css/main.css',
+        './css/stylus/stylus_main.css',
+        './css/less/less_main.css',
+        './css/scss/scss_main.css',
+        './css/sass/sass_main.css'
         ], ['css']);
     gulp.watch([
         './bower_components/**/*.js',
-        './js/**/*.js'
+        './js/main.js',
+        './js/coffee/coffee_main.js'
         ], ['js', 'js-ie']);
     gulp.watch([
         './css/stylus/**/*.styl'
