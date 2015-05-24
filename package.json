@@ -40,9 +40,9 @@
     "gulp-watch": "4.2.4",
     "imagemin-pngquant": "4.1.0",
     "jade": "1.9.2",
-    "less": "2.5.0",
+    "less": "2.5.1",
     "nib": "1.1.0",
-    "node-sass": "3.1.1",
+    "node-sass": "3.1.2",
     "stylus": "0.51.1"
   }
 }
