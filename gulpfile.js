@@ -52,10 +52,8 @@ gulp.task('js', function () {
         .pipe(concat('all.min.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/js'));
-});
 
-// JS for IE
-gulp.task('js-ie', function () {
+    // for IE
     gulp.src([
         './bower_components/html5shiv/dist/html5shiv.min.js',
         './bower_components/respond/dest/respond.min.js'
@@ -130,7 +128,7 @@ gulp.task('watch', function () {
         './bower_components/**/*.js',
         './js/main.js',
         './js/coffee/coffee_main.js'
-        ], ['js', 'js-ie']);
+        ], ['js']);
     gulp.watch([
         './css/stylus/**/*.styl'
         ], ['stylus']);
@@ -164,7 +162,7 @@ gulp.task('browser-sync', function () {
 });
 
 // Compile
-gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'js-ie', 'jade']);
+gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'jade']);
 
 // Deploy
 gulp.task('deploy', ['images']);
