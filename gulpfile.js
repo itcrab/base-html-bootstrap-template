@@ -11,7 +11,9 @@ var gulp         = require('gulp'),
     coffee       = require('gulp-coffee'),
     gutil        = require('gulp-util'),
     autoprefixer = require('gulp-autoprefixer'),
-    jade         = require('gulp-jade');
+    jade         = require('gulp-jade'),
+    imagemin     = require('gulp-imagemin'),
+    pngquant     = require('imagemin-pngquant');
 
 // CSS
 gulp.task('css', function () {
@@ -102,6 +104,17 @@ gulp.task('jade', function () {
         .pipe(gulp.dest('./'));
 });
 
+// Images
+gulp.task('images', function () {
+    return gulp.src('./img/**/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('./dist/img/'));
+});
+
 // Watcher
 gulp.task('watch', function () {
     gulp.watch([
@@ -137,6 +150,9 @@ gulp.task('watch', function () {
 
 // Compile
 gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'js-ie', 'jade']);
+
+// Deploy
+gulp.task('deploy', ['images']);
 
 // default
 gulp.task('default', ['watch']);
