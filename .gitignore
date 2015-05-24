@@ -8,26 +8,17 @@ node_modules
 ### Bower template
 bower_components/
 
-# Minification CSS&JS
-css/min/
-js/min/
+# CSS
+css/**/*.css
+!css/main.css
 
-# Stylus
-css/stylus/*.css
-
-# LESS
-css/less/*.css
-
-# SASS
-css/scss/*.css
-css/sass/*.css
-
-# CoffeeScript
-js/coffee/*.js
-js/coffee/*.map
+# JS
+js/**/*.js
+js/**/*.map
+!js/main.js
 
 # Jade
-html/jade/*.html
+html/jade/**/*.html
 jade_index.html
 
 # Images

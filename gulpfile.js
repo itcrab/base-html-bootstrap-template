@@ -34,7 +34,7 @@ gulp.task('css', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('all.min.css'))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./css/min'));
+        .pipe(gulp.dest('./dist/css'));
 });
 
 // JS
@@ -50,7 +50,7 @@ gulp.task('js', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('all.min.js'))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./js/min'));
+        .pipe(gulp.dest('./dist/js'));
 });
 
 // JS for IE
@@ -63,7 +63,7 @@ gulp.task('js-ie', function () {
         .pipe(sourcemaps.init())
         .pipe(concat('all.ie.min.js'))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./js/min'));
+        .pipe(gulp.dest('./dist/js'));
 });
 
 // Stylus
