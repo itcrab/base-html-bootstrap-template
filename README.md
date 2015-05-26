@@ -26,6 +26,7 @@ index.html         - Base template
 * **deploy**: image optimization (using when you ready to production)
 * **gulp_watch**: automatic updating resources
 * **gulp_sync**: automatic updating resources and live updating page in browser
+
 Notice: you may use your IDE/Editor (WebStorm or another) or executing scripts in `exec` directory
 
 ## Steroids (THANKS!):
