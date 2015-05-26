@@ -1,26 +1,32 @@
 # Base HTML5 Bootstrap template
-
-Template for starting from scratch on steroids.
+Starting from scratch template on steroids.
 
 ## How to using?
 * clone repo: `git clone https://github.com/itcrab/base-html-bootstrap-template.git`
-* exec script: `exec/starting_from_scratch.{bat,sh}`
+* execute script: `exec/starting_from_scratch.{bat,sh}`
 * enjoy!
-
-For run GulpJS tasks you may use your IDE/Editor (PhpStorm or another) or exec scripts in `exec` directory:
-* `gulp_compile.{bat,sh}` for run `compile` task
-* `gulp_watch.{bat,sh}` for run `watch` task
 
 ## Structure
 ```
 [bower_components] - Bower components
-[css]              - CSS styles and all supported preprocessors (Stylus, LESS, SASS)
-[exec]             - Exec tools for fast local deploy and run GulpJS tasks
+[css]              - CSS styles and supported preprocessors (Stylus, LESS, SASS)
+[dist]             - Generated resources (compressed CSS&JS and optimized images)
+[exec]             - Execute scripts (first run and GulpJS tasks)
 [fonts]            - Fonts
-[img]              - Images
-[js]               - JS sources and all supported preprocessors (CoffeeScript)
+[html]             - HTML template engines files (Jade)
+[img]              - Images (original images)
+[js]               - JS sources and supported preprocessors (CoffeeScript)
 [node_components]  - NodeJS components
+...
+index.html         - Base template
 ```
+
+## GulpJS tasks
+* **compile**: generating resources (CSS&JS) for base template
+* **deploy**: image optimization (using when you ready to production)
+* **gulp_watch**: automatic updating resources
+* **gulp_sync**: automatic updating resources and live updating page in browser
+Notice: you may use your IDE/Editor (WebStorm or another) or executing scripts in `exec` directory
 
 ## Steroids (THANKS!):
 * Bower: http://bower.io
