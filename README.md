@@ -23,7 +23,7 @@ index.html         - Base template
 
 ## GulpJS tasks
 * **compile**: generating resources (CSS&JS) for base template
-* **deploy**: image optimization (using when you ready to production)
+* **deploy**: image optimization and creating screenshots for main page (using when you ready to production)
 * **gulp_watch**: automatic updating resources
 * **gulp_sync**: automatic updating resources and live updating page in browser
 
