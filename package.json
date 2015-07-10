@@ -1,6 +1,6 @@
 {
   "name": "base-html-bootstrap-template",
-  "version": "2015.05.25",
+  "version": "2015.07.10",
   "description": "Base HTML5 Bootstrap template",
   "main": "index.js",
   "scripts": {
