@@ -10,7 +10,7 @@ Starting from scratch template on steroids.
 ```
 [bower_components] - Bower components
 [css]              - CSS styles and supported preprocessors (Stylus, LESS, SASS)
-[dist]             - Generated resources (compressed CSS&JS, optimized images and screenshots main page)
+[dist]             - Generated resources (compressed CSS&JS, optimized images and screenshots)
 [exec]             - Execute scripts (first run and GulpJS tasks)
 [fonts]            - Fonts
 [html]             - HTML template engines files (Jade)
