@@ -161,11 +161,25 @@ gulp.task('browser-sync', function () {
         }});
 });
 
+// Images
+gulp.task('screenshot', function () {
+    var Pageres = require('pageres');
+
+    pageres = new Pageres({delay: 2})
+        .src('localhost', ['1920x1080', '1366x768', '1280x1024'])
+        .src('localhost:3000', ['1920x1080', '1366x768', '1280x1024'])
+        .src('localhost:3001', ['1920x1080', '1366x768', '1280x1024'])
+        .dest('./dist/screenshots')
+        .run(function (err) {
+            console.log('Creating screenshots is done!');
+        });
+});
+
 // Compile
 gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'jade']);
 
 // Deploy
-gulp.task('deploy', ['images']);
+gulp.task('deploy', ['images', 'screenshot']);
 
 // default
 gulp.task('default', ['watch', 'browser-sync']);
