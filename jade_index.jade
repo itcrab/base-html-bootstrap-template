@@ -1,11 +1,8 @@
-doctype html
-html(class='no-js', lang='en')
-    head
-        include ./html/jade/head.jade
-    body
-        include ./html/jade/happy.jade
+extends ./html/jade/layout
 
-        <!-- Add your site or application content here -->
-        p Site or application content.
+block title
+    title The base HTML5 Bootstrap template
 
-        include ./html/jade/foot.jade
+block content
+    <!-- Add your site or application content here -->
+    p Site or application content.
