@@ -71,24 +71,24 @@ gulp.task('js', function () {
 
 // Stylus
 gulp.task('stylus', function () {
-    gulp.src('./css/stylus/**/*.styl')
+    gulp.src('./css/stylus/stylus_main.styl')
         .pipe(stylus({use: nib()}))
         .pipe(gulp.dest('./css/stylus'));
 });
 
 // LESS
 gulp.task('less', function () {
-    gulp.src('./css/less/**/*.less')
+    gulp.src('./css/less/less_main.less')
         .pipe(less())
         .pipe(gulp.dest('./css/less'));
 });
 
 // SASS
 gulp.task('sass', function () {
-    gulp.src('./css/scss/**/*.scss')
+    gulp.src('./css/scss/scss_main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./css/scss'));
-    gulp.src('./css/sass/**/*.sass')
+    gulp.src('./css/sass/sass_main.sass')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./css/sass'));
 });
