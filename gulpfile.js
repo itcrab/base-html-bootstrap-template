@@ -18,6 +18,10 @@ var gulp         = require('gulp'),
 
 // CSS
 gulp.task('css', function () {
+    // fix connecting Bootstrap Glyphicons font
+    gulp.src('./bower_components/bootstrap/fonts/*.{eot,svg,ttf,woff,woff2}')
+        .pipe(gulp.dest('./dist/fonts'));
+
     gulp.src([
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
