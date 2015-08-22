@@ -37,7 +37,7 @@
     "gulp-stylus": "2.0.6",
     "gulp-uglify": "1.2.0",
     "gulp-util": "3.0.6",
-    "gulp-watch": "4.3.4",
+    "gulp-watch": "4.3.5",
     "imagemin-pngquant": "4.1.2",
     "jade": "1.11.0",
     "less": "2.5.1",
