@@ -1,29 +1,28 @@
-# Created by .ignore support plugin (hsz.mobi)
-### JetBrains template
-.idea/
+### JetBrains
+/.idea
 
-### Node template
-node_modules
+### Bower
+/bower_components
 
-### Bower template
-bower_components/
+### CSS
+/css/**/*.css
+!/css/main.css
 
-# CSS
-css/**/*.css
-!css/main.css
+### Dist
+/dist/*
+!/dist/.gitkeep
 
-# JS
-js/**/*.js
-js/**/*.map
-!js/main.js
+### Jade
+/html/jade/**/*.html
+/jade_*.html
 
-# Jade
-html/jade/**/*.html
-jade_index.html
-
-# Images
+### Images
 Thumbs.db
 
-# Dist
-dist/*
-!dist/.gitkeep
+# JS
+/js/**/*.js
+/js/**/*.map
+!/js/main.js
+
+### NodeJS
+/node_modules
