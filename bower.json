@@ -1,6 +1,6 @@
 {
   "name": "base-html-bootstrap-template",
-  "version": "2015.09.10",
+  "version": "2015.10.03",
   "homepage": "https://github.com/itcrab/base-html-bootstrap-template",
   "authors": [
     "Arcady Usov <itcrab@ya.ru>"
@@ -20,11 +20,11 @@
     "tests"
   ],
   "dependencies": {
+    "bootstrap": "3.3.5",
+    "bourbon": "4.2.5",
+    "html5shiv": "3.7.3",
     "jquery": "1.11.3",
     "jquery-migrate": "1.2.1",
-    "bootstrap": "3.3.5",
-    "html5shiv": "3.7.3",
-    "respond": "1.4.2",
-    "bourbon": "4.2.4"
+    "respond": "1.4.2"
   }
 }
