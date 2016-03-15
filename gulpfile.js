@@ -1,6 +1,6 @@
 var gulp         = require('gulp'),
     sourcemaps   = require('gulp-sourcemaps'),
-    concat       = require('gulp-concat'),
+    rename       = require('gulp-rename'),
     watch        = require('gulp-watch'),
     cleanCSS     = require('gulp-clean-css'),
     uglify       = require('gulp-uglify'),
@@ -21,6 +21,7 @@ var gulp         = require('gulp'),
 // CSS
 gulp.task('css', function () {
     gulp.src('./css/all.css')
+        .pipe(sourcemaps.init())
         .pipe(autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Explorer 8', 'ie >= 8'],
             cascade: false,
@@ -28,8 +29,7 @@ gulp.task('css', function () {
         }))
         .pipe(cleanCSS())
         .pipe(rewriteCSS({destination: './dist/css'}))
-        .pipe(sourcemaps.init())
-        .pipe(concat('all.min.css'))
+        .pipe(rename('all.min.css'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css'));
 });
@@ -37,18 +37,18 @@ gulp.task('css', function () {
 // JS
 gulp.task('js', function () {
     gulp.src('./js/all.js')
+        .pipe(sourcemaps.init())
         .pipe(include()).on('error', console.log)
         .pipe(uglify())
-        .pipe(sourcemaps.init())
-        .pipe(concat('all.min.js'))
+        .pipe(rename('all.min.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/js'));
 
     // for IE
     gulp.src('./js/all.ie.js')
-        .pipe(uglify())
         .pipe(sourcemaps.init())
-        .pipe(concat('all.ie.min.js'))
+        .pipe(uglify())
+        .pipe(rename('all.ie.min.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/js'));
 });
