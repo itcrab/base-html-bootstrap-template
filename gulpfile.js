@@ -19,14 +19,7 @@ var gulp         = require('gulp'),
 
 // CSS
 gulp.task('css', function () {
-    gulp.src([
-        './bower_components/bootstrap/dist/css/bootstrap.min.css',
-        './css/main.css',
-        './css/stylus/stylus_main.css',
-        './css/less/less_main.css',
-        './css/scss/scss_main.css',
-        './css/sass/sass_main.css'
-        ])
+    gulp.src('./css/all.css')
         .pipe(autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Explorer 8', 'ie >= 8'],
             cascade: false,

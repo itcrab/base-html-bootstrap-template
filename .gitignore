@@ -6,7 +6,8 @@
 
 ### CSS
 /css/**/*.css
-!/css/main.css
+!/css/css/**/*.css
+!/css/all.css
 
 ### Dist
 /dist/*
