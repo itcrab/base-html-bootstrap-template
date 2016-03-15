@@ -14,14 +14,11 @@ var gulp         = require('gulp'),
     jade         = require('gulp-jade'),
     imagemin     = require('gulp-imagemin'),
     pngquant     = require('imagemin-pngquant'),
-    browserSync  = require('browser-sync');
+    browserSync  = require('browser-sync'),
+    rewriteCSS = require('gulp-rewrite-css');
 
 // CSS
 gulp.task('css', function () {
-    // fix connecting Bootstrap Glyphicons font
-    gulp.src('./bower_components/bootstrap/fonts/*.{eot,svg,ttf,woff,woff2}')
-        .pipe(gulp.dest('./dist/fonts'));
-
     gulp.src([
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './css/main.css',
@@ -36,6 +33,7 @@ gulp.task('css', function () {
             remove: false
         }))
         .pipe(minifyCSS())
+        .pipe(rewriteCSS({destination: './dist/css'}))
         .pipe(sourcemaps.init())
         .pipe(concat('all.min.css'))
         .pipe(sourcemaps.write('./'))
