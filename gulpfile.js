@@ -2,7 +2,7 @@ var gulp         = require('gulp'),
     sourcemaps   = require('gulp-sourcemaps'),
     concat       = require('gulp-concat'),
     watch        = require('gulp-watch'),
-    minifyCSS    = require('gulp-minify-css'),
+    cleanCSS     = require('gulp-clean-css'),
     uglify       = require('gulp-uglify'),
     stylus       = require('gulp-stylus'),
     nib          = require('nib'),
@@ -32,7 +32,7 @@ gulp.task('css', function () {
             cascade: false,
             remove: false
         }))
-        .pipe(minifyCSS())
+        .pipe(cleanCSS())
         .pipe(rewriteCSS({destination: './dist/css'}))
         .pipe(sourcemaps.init())
         .pipe(concat('all.min.css'))
