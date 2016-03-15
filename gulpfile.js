@@ -113,7 +113,7 @@ gulp.task('images', function () {
 gulp.task('watch', function () {
     gulp.watch([
         './bower_components/**/*.css',
-        './css/main.css',
+        './css/css/main.css',
         './css/stylus/stylus_main.css',
         './css/less/less_main.css',
         './css/scss/scss_main.css',
