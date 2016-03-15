@@ -23,7 +23,7 @@ gulp.task('css', function () {
     gulp.src('./css/all.css')
         .pipe(sourcemaps.init())
         .pipe(autoprefixer({
-            browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Explorer 8', 'ie >= 8'],
+            browsers: ['last 2 versions'],
             cascade: false,
             remove: false
         }))
