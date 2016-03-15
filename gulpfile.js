@@ -15,7 +15,8 @@ var gulp         = require('gulp'),
     imagemin     = require('gulp-imagemin'),
     pngquant     = require('imagemin-pngquant'),
     browserSync  = require('browser-sync'),
-    rewriteCSS   = require('gulp-rewrite-css');
+    rewriteCSS   = require('gulp-rewrite-css'),
+    include      = require("gulp-include");
 
 // CSS
 gulp.task('css', function () {
@@ -35,13 +36,8 @@ gulp.task('css', function () {
 
 // JS
 gulp.task('js', function () {
-    gulp.src([
-        './bower_components/jquery/dist/jquery.min.js',
-        './bower_components/jquery-migrate/jquery-migrate.min.js',
-        './bower_components/bootstrap/dist/js/bootstrap.min.js',
-        './js/main.js',
-        './js/coffee/coffee_main.js'
-        ])
+    gulp.src('./js/all.js')
+        .pipe(include()).on('error', console.log)
         .pipe(uglify())
         .pipe(sourcemaps.init())
         .pipe(concat('all.min.js'))
@@ -49,10 +45,7 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./dist/js'));
 
     // for IE
-    gulp.src([
-        './bower_components/html5shiv/dist/html5shiv.min.js',
-        './bower_components/respond/dest/respond.min.js'
-        ])
+    gulp.src('./js/all.ie.js')
         .pipe(uglify())
         .pipe(sourcemaps.init())
         .pipe(concat('all.ie.min.js'))
