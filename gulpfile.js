@@ -15,7 +15,7 @@ var gulp         = require('gulp'),
     imagemin     = require('gulp-imagemin'),
     pngquant     = require('imagemin-pngquant'),
     browserSync  = require('browser-sync'),
-    rewriteCSS = require('gulp-rewrite-css');
+    rewriteCSS   = require('gulp-rewrite-css');
 
 // CSS
 gulp.task('css', function () {
