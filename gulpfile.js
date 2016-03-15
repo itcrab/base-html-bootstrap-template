@@ -156,7 +156,7 @@ gulp.task('browser-sync', function () {
         }});
 });
 
-// Images
+// Screenshots
 gulp.task('screenshot', function () {
     var Pageres = require('pageres');
 
