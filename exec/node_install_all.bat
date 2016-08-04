@@ -1,2 +1,3 @@
 cd ..
-npm install
+call npm install
+cd exec

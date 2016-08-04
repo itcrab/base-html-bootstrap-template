@@ -1,2 +1,3 @@
 cd ..
-node_modules\.bin\gulp.cmd deploy
+call node_modules\.bin\gulp.cmd deploy
+cd exec

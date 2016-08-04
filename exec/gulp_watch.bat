@@ -1,2 +1,3 @@
 cd ..
-node_modules\.bin\gulp.cmd watch
+call node_modules\.bin\gulp.cmd watch
+cd exec

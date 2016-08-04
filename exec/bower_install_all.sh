@@ -2,3 +2,4 @@
 
 cd ..
 node_modules\.bin\bower install
+cd exec
