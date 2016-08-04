@@ -47,6 +47,7 @@ gulp.task('js', function () {
     // for IE
     gulp.src('./js/all.ie.js')
         .pipe(sourcemaps.init())
+        .pipe(include()).on('error', console.log)
         .pipe(uglify())
         .pipe(rename('all.ie.min.js'))
         .pipe(sourcemaps.write('./'))
