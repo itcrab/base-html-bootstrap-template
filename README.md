@@ -1,5 +1,4 @@
-# Base HTML5 Bootstrap template
-Starting from scratch template on steroids.
+# Base HTML5 Bootstrap template on steroids
 
 ## How to using?
 * clone repo: `git clone https://github.com/itcrab/base-html-bootstrap-template.git`
