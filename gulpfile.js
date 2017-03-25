@@ -11,7 +11,7 @@ var gulp         = require('gulp'),
     coffee       = require('gulp-coffee'),
     gutil        = require('gulp-util'),
     autoprefixer = require('gulp-autoprefixer'),
-    jade         = require('gulp-jade'),
+    pug          = require('gulp-pug'),
     imagemin     = require('gulp-imagemin'),
     pngquant     = require('imagemin-pngquant'),
     browserSync  = require('browser-sync'),
@@ -85,10 +85,10 @@ gulp.task('coffee', function () {
         .pipe(gulp.dest('./js/coffee'));
 });
 
-// Jade
-gulp.task('jade', function () {
-    gulp.src('./*.jade')
-        .pipe(jade())
+// Pug
+gulp.task('pug', function buildHTML() {
+    gulp.src('./*.pug')
+        .pipe(pug())
         .pipe(gulp.dest('./'));
 });
 
@@ -132,8 +132,9 @@ gulp.task('watch', function () {
         './js/coffee/**/*.coffee'
         ], ['coffee']);
     gulp.watch([
-        './*.jade'
-        ], ['jade']);
+        './*.pug',
+        './views/pug/**/*.pug'
+        ], ['pug']);
 });
 
 // BrowserSync
@@ -165,7 +166,7 @@ gulp.task('screenshot', function () {
 });
 
 // Compile
-gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'jade']);
+gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'pug']);
 
 // Deploy
 gulp.task('deploy', ['images', 'screenshot']);

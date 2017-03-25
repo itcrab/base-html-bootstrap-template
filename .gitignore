@@ -13,9 +13,9 @@
 /dist/*
 !/dist/.gitkeep
 
-### Jade
-/html/jade/**/*.html
-/jade_*.html
+### Pug
+/views/pug/**/*.html
+/*_pug.html
 
 ### Images
 Thumbs.db

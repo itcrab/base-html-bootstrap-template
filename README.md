@@ -13,10 +13,10 @@ Starting from scratch template on steroids.
 [dist]             - Generated resources (compressed CSS&JS, optimized images and screenshots)
 [exec]             - Execute scripts (first run and GulpJS tasks)
 [fonts]            - Fonts
-[html]             - HTML template engines files (Jade)
 [img]              - Images (original images)
 [js]               - JS sources and supported preprocessors (CoffeeScript)
 [node_components]  - NodeJS components
+[views]            - HTML template engines files (Pug)
 ...
 index.html         - Base template
 ```
@@ -44,4 +44,4 @@ Notice: you may use your IDE/Editor (WebStorm or another) or executing scripts i
 	* GulpJS: http://gulpjs.com
 * HTML
 	* HTML5 Boilerplate: https://github.com/h5bp/html5-boilerplate
-	* Jade: http://jade-lang.com
+	* Pug: https://pugjs.org/
