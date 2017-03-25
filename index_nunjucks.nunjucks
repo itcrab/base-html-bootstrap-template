@@ -1,0 +1,8 @@
+{% extends "views/nunjucks/layout.nunjucks" %}
+
+{% block title %}The base HTML5 Bootstrap template{% endblock %}
+
+{% block content %}
+<!-- Add your site or application content here -->
+<p>Site or application content.</p>
+{% endblock %}

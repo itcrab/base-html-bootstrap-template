@@ -12,6 +12,7 @@ var gulp         = require('gulp'),
     gutil        = require('gulp-util'),
     autoprefixer = require('gulp-autoprefixer'),
     pug          = require('gulp-pug'),
+    nunjucks     = require('gulp-nunjucks'),
     imagemin     = require('gulp-imagemin'),
     pngquant     = require('imagemin-pngquant'),
     browserSync  = require('browser-sync'),
@@ -85,6 +86,14 @@ gulp.task('coffee', function () {
         .pipe(gulp.dest('./js/coffee'));
 });
 
+// Nunjucks
+gulp.task('nunjucks', function buildHTML() {
+    gulp.src('./*.nunjucks')
+        .pipe(nunjucks.compile())
+        .pipe(rename({ extname: '.html' }))
+        .pipe(gulp.dest('./'));
+});
+
 // Pug
 gulp.task('pug', function buildHTML() {
     gulp.src('./*.pug')
@@ -132,6 +141,10 @@ gulp.task('watch', function () {
         './js/coffee/**/*.coffee'
         ], ['coffee']);
     gulp.watch([
+        './*.nunjucks',
+        './views/nunjucks/**/*.nunjucks'
+        ], ['nunjucks']);
+    gulp.watch([
         './*.pug',
         './views/pug/**/*.pug'
         ], ['pug']);
@@ -166,7 +179,7 @@ gulp.task('screenshot', function () {
 });
 
 // Compile
-gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'pug']);
+gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'nunjucks', 'pug']);
 
 // Deploy
 gulp.task('deploy', ['images', 'screenshot']);
