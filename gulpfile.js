@@ -17,7 +17,8 @@ var gulp         = require('gulp'),
     pngquant     = require('imagemin-pngquant'),
     browserSync  = require('browser-sync'),
     rewriteCSS   = require('gulp-rewrite-css'),
-    include      = require("gulp-include");
+    include      = require("gulp-include"),
+    gulpsync     = require('gulp-sync')(gulp);
 
 // CSS
 gulp.task('css', function () {
@@ -179,7 +180,10 @@ gulp.task('screenshot', function () {
 });
 
 // Compile
-gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'nunjucks', 'pug']);
+gulp.task('compile', gulpsync.sync(
+    ['stylus', 'less', 'sass', 'coffee', 'nunjucks', 'pug'],
+    'css', 'js'
+));
 
 // Deploy
 gulp.task('deploy', ['images', 'screenshot']);
