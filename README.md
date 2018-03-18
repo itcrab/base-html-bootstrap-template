@@ -1,4 +1,4 @@
-# Base HTML5 Bootstrap template on steroids
+# Base HTML5 Bootstrap 4 template on steroids
 
 ## How to using?
 * clone repo: `git clone https://github.com/itcrab/base-html-bootstrap-template.git`
@@ -24,8 +24,6 @@ index.html         - Base template
 * `npm run compile`: generating resources (CSS&JS) for base template
 * `npm run deploy`: image optimization and creating screenshots for main page (using when you ready to production)
 * `npm run sync`: automatic updating resources and live updating page in browser
-
-Notice: you may use your IDE/Editor (WebStorm or another) or executing scripts in `exec` directory
 
 ## Steroids (THANKS!):
 * Bower: http://bower.io

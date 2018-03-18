@@ -17,8 +17,7 @@ var gulp         = require('gulp'),
     pngquant     = require('imagemin-pngquant'),
     browserSync  = require('browser-sync'),
     rewriteCSS   = require('gulp-rewrite-css'),
-    include      = require("gulp-include"),
-    gulpsync     = require('gulp-sync')(gulp);
+    include      = require("gulp-include");
 
 // CSS
 gulp.task('css', function () {
@@ -43,15 +42,6 @@ gulp.task('js', function () {
         .pipe(include()).on('error', console.log)
         .pipe(uglify())
         .pipe(rename('all.min.js'))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./dist/js'));
-
-    // for IE
-    gulp.src('./js/all.ie.js')
-        .pipe(sourcemaps.init())
-        .pipe(include()).on('error', console.log)
-        .pipe(uglify())
-        .pipe(rename('all.ie.min.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/js'));
 });
@@ -155,7 +145,6 @@ gulp.task('watch', function () {
 gulp.task('browser-sync', function () {
     browserSync.init([
         './dist/css/all.min.css',
-        './dist/js/all.ie.min.js',
         './dist/js/all.min.js',
         './dist/img/**/*',
         './*.html'
@@ -180,10 +169,7 @@ gulp.task('screenshot', function () {
 });
 
 // Compile
-gulp.task('compile', gulpsync.sync(
-    ['stylus', 'less', 'sass', 'coffee', 'nunjucks', 'pug'],
-    'css', 'js'
-));
+gulp.task('compile', ['stylus', 'less', 'sass', 'css', 'coffee', 'js', 'nunjucks', 'pug']);
 
 // Deploy
 gulp.task('deploy', ['images', 'screenshot']);

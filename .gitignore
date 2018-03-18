@@ -29,7 +29,6 @@ Thumbs.db
 /js/**/*.map
 !/js/js/**/*.js
 !/js/all.js
-!/js/all.ie.js
 
 ### NodeJS
 /node_modules
