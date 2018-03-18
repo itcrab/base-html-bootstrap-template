@@ -2,7 +2,8 @@
 
 ## How to using?
 * clone repo: `git clone https://github.com/itcrab/base-html-bootstrap-template.git`
-* execute script: `exec/starting_from_scratch.{bat,sh}`
+* install node.js modules: `npm install`
+* run sync mode: `npm run sync`
 * enjoy!
 
 ## Structure
@@ -10,7 +11,6 @@
 [bower_components] - Bower components
 [css]              - CSS styles and supported preprocessors (Stylus, LESS, SASS)
 [dist]             - Generated resources (compressed CSS&JS, optimized images and screenshots)
-[exec]             - Execute scripts (first run and GulpJS tasks)
 [fonts]            - Fonts
 [img]              - Images (original images)
 [js]               - JS sources and supported preprocessors (CoffeeScript)
@@ -21,9 +21,9 @@ index.html         - Base template
 ```
 
 ## GulpJS tasks
-* **compile**: generating resources (CSS&JS) for base template
-* **deploy**: image optimization and creating screenshots for main page (using when you ready to production)
-* **default**: automatic updating resources and live updating page in browser
+* `npm run compile`: generating resources (CSS&JS) for base template
+* `npm run deploy`: image optimization and creating screenshots for main page (using when you ready to production)
+* `npm run sync`: automatic updating resources and live updating page in browser
 
 Notice: you may use your IDE/Editor (WebStorm or another) or executing scripts in `exec` directory
 
